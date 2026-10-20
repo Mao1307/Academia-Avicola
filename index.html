@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Academia avícola</title>
+<meta name="description" content="Dos cursos prácticos para emprender en avicultura a pequeña escala en el Perú: gallinas ponedoras y pollos de engorde.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDF0EA; --surface:#F9FAF6; --ink:#1E2922; --muted:#56635A; --line:#C9D1C6;
+  --yolk:#E9A20F; --comb:#D9622B; --shell:#8C4F2B; --leaf:#2F6446;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Literata",Georgia,serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#141916;--surface:#1C231E;--ink:#E6ECE5;--muted:#9FAEA2;--line:#314036;--yolk:#F2B42A;--comb:#EB8452;--shell:#D8976C;--leaf:#86C09B}
+}
+:root[data-theme="dark"]{--bg:#141916;--surface:#1C231E;--ink:#E6ECE5;--muted:#9FAEA2;--line:#314036;--yolk:#F2B42A;--comb:#EB8452;--shell:#D8976C;--leaf:#86C09B}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.65}
+.wrap{max-width:1040px;margin:0 auto;padding:clamp(1.5rem,5vw,4rem) clamp(1rem,4vw,2.5rem) 3rem}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0 0 .5em;letter-spacing:-.01em}
+h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:800;max-width:14ch}
+.lead{font-size:1.2rem;color:var(--muted);max-width:56ch;margin:0 0 2.5rem}
+.courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.4rem}
+.course{display:grid;grid-template-columns:96px 1fr;gap:1.2rem;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:1.6rem;color:var(--ink);text-decoration:none;border-top:8px solid var(--accent)}
+.course:hover{border-color:var(--accent)}
+.course:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.course svg{width:96px;height:120px}
+.course h2{font-size:1.6rem}
+.course p{margin:0 0 .8rem;color:var(--muted)}
+.course .meta{font-family:var(--display);font-size:.9rem;color:var(--ink)}
+.bar{height:8px;border-radius:99px;background:var(--line);overflow:hidden;margin-top:.6rem}
+.bar i{display:block;height:100%;background:var(--accent);width:0}
+.go{display:inline-block;margin-top:1rem;font-family:var(--display);font-weight:700}
+.notes{margin-top:3rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;border-top:2px solid var(--ink);padding-top:1.5rem}
+.notes h3{font-size:1.05rem}
+.notes p{margin:0;color:var(--muted);font-size:.97rem}
+.notes a{color:var(--leaf)}
+footer{margin-top:3rem;color:var(--muted);font-size:.85rem;font-family:var(--display)}
+@media (max-width:520px){.course{grid-template-columns:60px 1fr}.course svg{width:60px;height:76px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Academia avícola a pequeña escala</h1>
+  <p class="lead">Dos cursos prácticos para empezar con una buena base en el Perú, construidos sobre los temarios de los diplomas de ESAN en Gestión de Negocios Avícolas y en Planes de Negocios para Proyectos Avícolas.</p>
+
+  <div class="courses">
+    <a class="course" href="ponedoras.html" style="--accent:var(--yolk)">
+      <svg viewBox="0 0 20 26" aria-hidden="true"><path d="M10 1C5.2 1 1.5 9 1.5 15.2a8.5 8.5 0 0 0 17 0C18.5 9 14.8 1 10 1z" fill="var(--surface)" stroke="var(--shell)" stroke-width="1.2"/><circle cx="10" cy="15.5" r="4.6" fill="var(--yolk)"/></svg>
+      <div>
+        <h2>Gallinas ponedoras</h2>
+        <p>Producir y vender huevos: mercado, marca, crianza en postura, sanidad, costo por huevo y tu plan de negocio.</p>
+        <div class="meta">9 módulos · 40 lecciones · calculadora por mes</div>
+        <div class="bar"><i id="p1"></i></div>
+        <span class="go" id="t1">Empezar</span>
+      </div>
+    </a>
+    <a class="course" href="engorde.html" style="--accent:var(--comb)">
+      <svg viewBox="0 0 20 26" aria-hidden="true"><path d="M10 1C5.2 1 1.5 9 1.5 15.2a8.5 8.5 0 0 0 17 0C18.5 9 14.8 1 10 1z" fill="var(--surface)" stroke="var(--shell)" stroke-width="1.2"/><path d="M5.5 14.5c1.2-1.6 2.6-2.3 4.5-2.3s3.3.7 4.5 2.3c-1.2 1.6-2.6 2.6-4.5 2.6s-3.3-1-4.5-2.6z" fill="var(--comb)"/></svg>
+      <div>
+        <h2>Pollos de engorde</h2>
+        <p>Criar y vender pollo por campañas: mercado, canales, crianza de 6 semanas, beneficio, costo por kilo y tu plan de negocio.</p>
+        <div class="meta">9 módulos · 40 lecciones · calculadora por campaña</div>
+        <div class="bar"><i id="p2"></i></div>
+        <span class="go" id="t2">Empezar</span>
+      </div>
+    </a>
+  </div>
+
+  <section class="notes">
+    <div><h3>Tu avance se guarda</h3><p>Lecciones leídas, quizzes, tareas, calculadora y plan se guardan en el navegador del dispositivo que uses. Si cambias de navegador o borras los datos del sitio, empiezas de cero; copia tu plan de negocio cuando lo termines.</p></div>
+    <div><h3>Funciona sin internet</h3><p>Puedes abrir estos archivos directamente desde tu computadora o celular. Con internet se ven las tipografías del diseño; sin internet se usan las del sistema.</p></div>
+    <div><h3>Antes de invertir</h3><p>Las cifras de precios y producción son referencias para aprender. Reemplázalas con cotizaciones de tu zona y valida con un médico veterinario, un contador y <a href="https://www.gob.pe/senasa" target="_blank" rel="noopener">SENASA</a>.</p></div>
+  </section>
+  <footer>Material de estudio personal. Contenido referencial preparado en 2026; ESAN no participa ni respalda estos cursos.</footer>
+</div>
+<script>
+[["avicurso:v1","p1","t1"],["avicurso-engorde:v1","p2","t2"]].forEach(([k,b,t])=>{
+  try{
+    const s=JSON.parse(localStorage.getItem(k)||"null"); if(!s) return;
+    const read=Object.values(s.read||{}).reduce((a,x)=>a+x.length,0);
+    const pct=Math.round(Math.min(1,read/40)*100);
+    document.getElementById(b).style.width=pct+"%";
+    if(read>0) document.getElementById(t).textContent="Continuar · "+pct+"% leído";
+  }catch(e){}
+});
+</script>
+</body>
+</html>
